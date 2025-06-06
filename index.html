@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OpenSecurity</title>
+    <meta name="description"
+        content="OpenSecurity simple and powerful open-source foss tools. Explore our projects on GitHub.">
+
+    <style>
+        :root {
+            --bg-color: #000000;
+            --text-color: #e6e6e6;
+            --muted-text-color: #808080;
+            --primary-color: #00f0ff;
+            --secondary-color: #ff00ff;
+            --border-color: rgba(255, 255, 255, 0.2);
+            --card-bg-color: #121212;
+            --container-max-width: 840px;
+            --spacing-unit: 16px;
+            --font-mono: 'Menlo', 'Consolas', 'Monaco', 'liberation mono', 'lucida console', monospace;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        .container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .page-header {
+            padding: calc(var(--spacing-unit) * 1.5) 0;
+        }
+
+        .header-title {
+            font-family: var(--font-mono);
+            font-size: 22px;
+            font-weight: 600;
+            margin: 0;
+            color: var(--primary-color);
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: calc(var(--spacing-unit) * 5) 0;
+        }
+
+        .hero-title {
+            font-family: var(--font-mono);
+            font-size: 44px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin: 0 0 var(--spacing-unit) 0;
+            position: relative;
+            color: var(--text-color);
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto calc(var(--spacing-unit) * 2) auto;
+            color: var(--muted-text-color);
+        }
+
+        .project-list {
+            list-style: none;
+            padding: 0;
+            margin-top: calc(var(--spacing-unit) * 2);
+        }
+
+        .project-item a {
+            display: block;
+            text-decoration: none;
+            color: var(--text-color);
+            padding: calc(var(--spacing-unit) * 1.5);
+            border: 1px solid var(--border-color);
+            margin-bottom: var(--spacing-unit);
+            position: relative;
+            overflow: hidden;
+            transition: background-color 0.2s ease;
+        }
+
+        .project-item a:hover {
+            background-color: var(--card-bg-color);
+        }
+
+        .project-title {
+            font-family: var(--font-mono);
+            font-weight: 600;
+            font-size: 20px;
+            margin: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-title-arrow {
+            display: inline-block;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .project-item a:hover .project-title-arrow {
+            transform: translateX(5px);
+        }
+
+        .page-footer {
+            text-align: center;
+            padding: calc(var(--spacing-unit) * 2) 0;
+            margin-top: calc(var(--spacing-unit) * 3);
+            font-size: 14px;
+            font-family: var(--font-mono);
+            color: var(--muted-text-color);
+        }
+
+        .page-footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .page-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Glitch Effect */
+        .glitchable {
+            position: relative;
+        }
+
+        .glitchable:hover::before,
+        .glitchable:hover::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-color);
+            overflow: hidden;
+        }
+
+        .glitchable:hover::before {
+            left: 2px;
+            text-shadow: -1px 0 var(--secondary-color);
+            animation: glitch-anim-1 2s infinite linear alternate-reverse;
+        }
+
+        .glitchable:hover::after {
+            left: -2px;
+            text-shadow: -1px 0 var(--primary-color);
+            animation: glitch-anim-2 2s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim-1 {
+            0% {
+                clip-path: inset(45% 0 50% 0);
+            }
+
+            25% {
+                clip-path: inset(0 0 0 0);
+            }
+
+            50% {
+                clip-path: inset(80% 0 15% 0);
+            }
+
+            75% {
+                clip-path: inset(50% 0 45% 0);
+            }
+
+            100% {
+                clip-path: inset(10% 0 80% 0);
+            }
+        }
+
+        @keyframes glitch-anim-2 {
+            0% {
+                clip-path: inset(15% 0 70% 0);
+            }
+
+            25% {
+                clip-path: inset(70% 0 25% 0);
+            }
+
+            50% {
+                clip-path: inset(40% 0 50% 0);
+            }
+
+            75% {
+                clip-path: inset(80% 0 5% 0);
+            }
+
+            100% {
+                clip-path: inset(25% 0 70% 0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="page-header">
+            <h1 class="header-title">./OpenSecurity</h1>
+        </header>
+
+        <main>
+            <section class="hero-section">
+                <h2 class="hero-title glitchable" data-text="Open Security">Open Security</h2>
+                <p class="hero-subtitle">
+                    Simple tools for complex challenges.
+                </p>
+            </section>
+
+            <ul class="project-list">
+                <li class="project-item">
+                    <a href="https://github.com/opensecurity/avw" target="_blank" rel="noopener noreferrer">
+                        <h3 class="project-title glitchable" data-text="ansible-vault-web">ansible-vault-web <span
+                                class="project-title-arrow">&rarr;</span></h3>
+                    </a>
+                </li>
+                <li class="project-item">
+                    <a href="https://github.com/opensecurity/vmt" target="_blank" rel="noopener noreferrer">
+                        <h3 class="project-title glitchable" data-text="virtual-machine-tool">virtual-machine-tool <span
+                                class="project-title-arrow">&rarr;</span></h3>
+                    </a>
+                </li>
+            </ul>
+        </main>
+
+        <footer class="page-footer">
+            <p>&copy; 2025 <a href="https://github.com/opensecurity" target="_blank"
+                    rel="noopener noreferrer">OpenSecurity</a> FOSS</p>
+            <span aria-hidden="true" style="visibility: hidden; position: absolute; left: -9999px;">created by Lucian
+                BLETAN </span>
+        </footer>
+    </div>
+</body>
+
+</html>
